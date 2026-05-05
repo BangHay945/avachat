@@ -1,0 +1,15 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="120" y2="120">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <circle cx="38" cy="60" r="9" fill="url(#brand)" />
+  <circle cx="60" cy="34" r="14" fill="url(#brand)" />
+  <circle cx="82" cy="60" r="9" fill="url(#brand)" />
+  <circle cx="60" cy="84" r="6" fill="url(#brand)" opacity="0.5" />
+  <line x1="49" y1="43" x2="42" y2="56" stroke="url(#brand)" stroke-width="3" stroke-linecap="round" />
+  <line x1="71" y1="43" x2="78" y2="56" stroke="url(#brand)" stroke-width="3" stroke-linecap="round" />
+  <line x1="60" y1="48" x2="60" y2="78" stroke="url(#brand)" stroke-width="3" stroke-linecap="round" />
+</svg>

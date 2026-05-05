@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: avachat-postgres
+    environment:
+      POSTGRES_USER: avachat
+      POSTGRES_PASSWORD: avachat
+      POSTGRES_DB: avachat
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "avachat"]
+      interval: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: avachat-api
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      DATABASE_URL: postgres://avachat:avachat@db:5432/avachat?sslmode=disable
+      JWT_SECRET: change-me-in-production
+      CORS_ORIGIN: http://localhost:3000
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
